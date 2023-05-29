@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'iransans';
+    src: local('iransans'),
+         url('../fonts/IRANSans\ UltraLight.ttf') format("ttf");
+  }
+body{font-family:iransans ;direction: rtl;} 
+.old_price{ margin-top: 10px; font-size:0.8em;  text-decoration: line-through;  color:grey;}

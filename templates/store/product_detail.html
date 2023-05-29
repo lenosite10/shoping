@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+{% extends 'layout.html' %} 
+{% load static %}
+
+{% block bodyweb %}
+
+<section class="section-content padding-y bg">
+    <div class="container">
+    
+    <!-- ============================ COMPONENT 1 ================================= -->
+    <div class="card">
+        <div class="row no-gutters">
+            <aside class="col-md-6">
+    <article class="gallery-wrap"> 
+        <div class="img-big-wrap">
+           <a href="#"><img src="{{ singel_product.images.url}}"></a>
+        </div> <!-- img-big-wrap.// -->
+        
+    </article> <!-- gallery-wrap .end// -->
+            </aside>
+            <main class="col-md-6 border-left">
+    <article class="content-body">
+    
+    <h2 class="title " style="text-align: right;">{{ singel_product.product_name }}</h2>
+    <hr>
+  
+    
+    <p class="dir" style="text-align: right;">{{ singel_product.description }}</p>
+    
+    
+    <hr>
+        <div class="row">
+            <div class="item-option-select">
+                <h6 class="float-md-right"> انتخاب رنگ</h6><br>
+                <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color"> Silver
+                  </label>
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color" > Gray
+                  </label>
+                  <label class="btn btn-light active">
+                    <input type="radio" name="radio_color checked"> Gold
+                  </label>
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color"> Black
+                  </label>
+                </div> 
+            </div>
+        </div> <!-- row.// -->
+        <div class="row">
+            <div class="item-option-select">
+                <h6 class="float-md-right">انتخاب سایز</h6><br>
+                <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color"> S
+                  </label>
+                  <label class="btn btn-light active">
+                    <input type="radio" name="radio_color" checked> M
+                  </label>
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color"> L
+                  </label>
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color"> XL
+                  </label>
+                </div> 
+            </div>
+        </div> <!-- row.// -->
+        <hr>
+        <div class="mb-3 float-md-right"> 
+
+            <var class="price h4">{{ singel_product.price }}</var> <span>تومان</span><br>
+            {% if singel_product.price_old %}
+            <span class="old_price" style="margin-top: 10px; font-size:0.8em;  text-decoration: line-through;  color:grey;">{{ singel_product.price_old }}  تومان</span>
+            {% else %}
+                <br>
+            {% endif %}
+        </div> 
+        
+        {% if singel_product.stock <= 0 %}
+
+        <h5 class="text-danger">موجودی به اتمام رسیده</h5>
+
+        {% else %}
+        <a href="./product-detail.html" class="btn  btn-primary"> <span class="text">اضافه به سبد خرید</span> <i class="fas fa-shopping-cart"></i>  </a>
+
+        {% endif %}
+          
+        
+    </article> <!-- product-info-aside .// -->
+            </main> <!-- col.// -->
+        </div> <!-- row.// -->
+    </div> <!-- card.// -->
+    <!-- ============================ COMPONENT 1 END .// ================================= -->
+    
+    <br>
+    
+    <div class="row">
+                <div class="col-md-9">
+    
+        <header class="section-heading">
+            <h3 style="text-align: right;">نظرات کاربران</h3>  
+            
+        </header>
+    
+        <article class="box mb-3" style="text-align: right;">
+            <div class="icontext w-100">
+                <img src="{% static './images/avatars/avatar1.jpg' %}" class="img-xs icon rounded-circle">
+                <div class="text">
+                    <span class="date text-muted float-md-right">24.04.2020 </span>  <br>
+                    <h6 class="mb-1">Mike John </h6>
+                    
+                </div>
+            </div> <!-- icontext.// -->
+            <div class="mt-3">
+                <p>
+                    Dummy comment Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip
+                </p>	
+            </div>
+        </article>
+    
+        
+    
+        </div> <!-- col.// -->
+    </div> <!-- row.// -->
+    
+    
+    </div> <!-- container .//  -->
+    </section>
+
+{% endblock bodyweb %}
+
+
+
